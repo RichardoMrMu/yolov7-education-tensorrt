@@ -136,6 +136,7 @@ python export.py --weights /data/tbw_data/hand/yolov7/runs/train/yolov714/weight
 这里用两个方法将onnx模型生成TensorRT模型，分别是使用`trtexec`来直接导出或者[Linaom1214](https://github.com/Linaom1214/TensorRT-For-YOLO-Series)中的[export.py](https://github.com/Linaom1214/TensorRT-For-YOLO-Series/blob/main/export.py)
 
 1. trtexec
+
 ```shell
 /usr/src/tensorrt/bin/trtexec --onnx=yolov7.onnx --saveEngine=yolov7-nms.trt --fp16 --workspace=64
 ```
@@ -265,6 +266,7 @@ make
 即在build下生成了result.jpg结果
 
 2. Python & export.py
+
 对于使用python开发的项目，即可运行下面命令进行测试，注意，下面代码并没有在本人的nx环境中进行测试。
 ```shell
 git clone https://github.com/Linaom1214/tensorrt-python.git
