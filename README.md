@@ -140,6 +140,9 @@ python export.py --weights /data/tbw_data/hand/yolov7/runs/train/yolov714/weight
 /usr/src/tensorrt/bin/trtexec --onnx=yolov7.onnx --saveEngine=yolov7-nms.trt --fp16 --workspace=64
 ```
 其中参数`--onnx`输入的是Custom Onnx Model的具体路径，而`--saveEngine`输入的是导出的TensorRT模型想保存的具体路径。参数`--workspace`设置工作空间大小单位是MB(默认为16MB)，为了避免出现空间不够的情况，可以酌情调大一点。
+```
+Some tactics do not have sufficient workspace memory to run. Increasing workspace size may increase performance, please check verbose output.
+```
 
 使用`trtexec --help`命令可以查看一些参数，这里贴一些参数
 ```shell
